@@ -13,9 +13,11 @@ import tkinter as tk
 def add_item():
     item = item_entry.get()
     price = price_entry.get()
-    items_listbox.insert(tk.END, f"{item}: ${price}")
+    quantity = quantity_entry.get()
+    items_listbox.insert(tk.END, f"{item} ({quantity}): ${price}")
     item_entry.delete(0, tk.END)
     price_entry.delete(0, tk.END)
+    quantity_entry.delete(0, tk.END)
 
 # Create the main window
 root = tk.Tk()
@@ -38,6 +40,12 @@ price_label = tk.Label(root, text="Enter item price:")
 price_label.pack()
 price_entry = tk.Entry(root)
 price_entry.pack()
+
+# Create a label for item quantity and entry field for item quantity
+quantity_label = tk.Label(root, text="Enter item quantity:")
+quantity_label.pack()
+quantity_entry = tk.Entry(root)
+quantity_entry.pack()
 
 # Create a button to add items to the listbox
 add_button = tk.Button(root, text="Add", command=add_item)
