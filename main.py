@@ -21,6 +21,12 @@ def add_item():
 root = tk.Tk()
 root.title("My Simple GUI")
 
+# Create a label for budget and entry field for budget
+budget_label = tk.Label(root, text="Enter your budget:")
+budget_label.pack()
+budget_entry = tk.Entry(root)
+budget_entry.pack()
+
 # Create a label for item name and entry field for item name
 item_label = tk.Label(root, text="Enter item name:")
 item_label.pack()
