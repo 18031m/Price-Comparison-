@@ -9,20 +9,37 @@
 
 import tkinter as tk
 
+# Function to add items to the listbox
+def add_item():
+    item = item_entry.get()
+    price = price_entry.get()
+    items_listbox.insert(tk.END, f"{item}: ${price}")
+    item_entry.delete(0, tk.END)
+    price_entry.delete(0, tk.END)
+
 # Create the main window
 root = tk.Tk()
-root.title("My App")
+root.title("My Simple GUI")
 
-# Create the frame
-frame = tk.Frame(root, width=300, height=200)
-frame.pack()
+# Create a label for item name and entry field for item name
+item_label = tk.Label(root, text="Enter item name:")
+item_label.pack()
+item_entry = tk.Entry(root)
+item_entry.pack()
 
-# Add some widgets to the frame
-label = tk.Label(frame, text="Hello, world!")
-label.pack()
+# Create a label for item price and entry field for item price
+price_label = tk.Label(root, text="Enter item price:")
+price_label.pack()
+price_entry = tk.Entry(root)
+price_entry.pack()
 
-button = tk.Button(frame, text="Click me!")
-button.pack()
+# Create a button to add items to the listbox
+add_button = tk.Button(root, text="Add", command=add_item)
+add_button.pack()
+
+# Create a listbox to display the items
+items_listbox = tk.Listbox(root)
+items_listbox.pack()
 
 # Run the main loop
 root.mainloop()
