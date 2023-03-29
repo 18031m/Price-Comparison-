@@ -18,10 +18,23 @@ def add_item():
     item_entry.delete(0, tk.END)
     price_entry.delete(0, tk.END)
     quantity_entry.delete(0, tk.END)
+    add_new_item()
+
+# Function to add a new item
+def add_new_item():
+    new_item = tk.messagebox.askyesno("Add New Item", "Do you want to add a new item?")
+    if new_item:
+        item_entry.focus()
+    else:
+        item_entry.delete(0, tk.END)
+        price_entry.delete(0, tk.END)
+        quantity_entry.delete(0, tk.END)
+        item_entry.focus()
 
 # Create the main window
 root = tk.Tk()
 root.title("My Simple GUI")
+root.geometry("400x400") # Set the width to 400 pixels and height to 300 pixels
 
 # Create a label for budget and entry field for budget
 budget_label = tk.Label(root, text="Enter your budget:")
