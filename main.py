@@ -1,12 +1,3 @@
-'''
-  Name: 
-  James Hargest College
-  Programming Internal for 2.7 & 2.8 ~ 12 credits
-  Due: 6 April 2023
-  
-  TIP: Use assessment guide to help guide you through this Internal
-'''
-
 import tkinter as tk
 
 # Function to add items to the listbox
@@ -49,7 +40,7 @@ def add_new_item():
 # Create the main window
 root = tk.Tk()
 root.title("My Simple GUI")
-root.geometry("400x420")
+root.geometry("400x400")
 
 # Create a label for budget and entry field for budget
 budget_label = tk.Label(root, text="Enter your budget:")
@@ -80,7 +71,7 @@ add_button = tk.Button(root, text="Add", command=add_item)
 add_button.pack()
 
 # Create a listbox to display the items
-items_listbox = tk.Listbox(root, width=30)
+items_listbox = tk.Listbox(root, width=50)
 items_listbox.pack()
 
 # Create a button to calculate the highest value item
@@ -88,7 +79,7 @@ highest_value_button = tk.Button(root, text="Calculate Highest Value Item", comm
 highest_value_button.pack()
 
 # Create a text box to display the highest value item
-highest_value_textbox = tk.Text(root, width=34, height=2)
+highest_value_textbox = tk.Text(root, width=50, height=3)
 highest_value_textbox.pack()
 
 # Run the main loop
